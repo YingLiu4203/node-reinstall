@@ -15,8 +15,8 @@ USE_NVM=1
 # use --force to bypass user confirmation
 FORCE=0
 
-## default node version
-NODE_VERSION="5"
+## default node version is the latest
+NODE_VERSION=""
 
 usage () {
   printf "%s\n" "node-reinstall"
@@ -197,8 +197,14 @@ fi
 
 if (( $USE_NVM )); then
   # install the specified version of node then set it as the default
-  nvm install $NODE_VERSION
-  nvm alias default $NODE_VERSION
+  if [[ -z $NODE_VERSION ]]; then
+    nvm install $NODE_VERSION
+    nvm alias default $NODE_VERSION
+  else
+    # this install the latest node 
+    nvm install node
+    nvm alias default node
+  fi
 elif (( $USE_NAVE )); then
   nave usemain $NODE_VERSION
 fi
