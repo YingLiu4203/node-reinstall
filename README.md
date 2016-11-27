@@ -2,6 +2,8 @@
 
 [![Join the chat at https://gitter.im/brock/node-reinstall](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/brock/node-reinstall?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
+** I changed the default to install the latest Node instead of pre-defined fixed version **
+
 Node-Reinstall is going to delete a lot of shit, and you won't be able to recover any of it. Do yourself a favor and make sure that you read the [node-reinstall](./node-reinstall) script and completely understand what it is going to do (i.e.: *what it is going to delete*) before you proceed. Here is an expanded version of the script that shows all of the directories that will be deleted:
 
 ```
