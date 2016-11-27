@@ -117,9 +117,9 @@ fi
 # check to see if npm is installed
 IS_NPM_MISSING=$(which npm)
 if [[ -z $IS_NPM_MISSING ]]; then
-  echo "Installing Node, npm."
+  echo "Installing NVM, Node, npm."
 else
-  echo "Completely reinstalling Node, npm."
+  echo "Completely reinstalling NVM, Node, npm."
   # get list of global npm modules to reinstall
   # omit the lib directory listing
   GLOBAL_MODULES=`npm -g list --depth 0 --parseable | xargs basename | sed -E 's/^(lib|npm)$//g'`
@@ -196,14 +196,16 @@ fi
 
 
 if (( $USE_NVM )); then
-  # install the specified version of node then set it as the default
   if [[ -z $NODE_VERSION ]]; then
-    nvm install $NODE_VERSION
-    nvm alias default $NODE_VERSION
-  else
-    # this install the latest node 
+    # install the latest node 
+    echo "Install the latest node version"
     nvm install node
     nvm alias default node
+  else
+    # install the specified version of node then set it as the default
+    echo "Install the node version ${NODE_VERSION}"
+    nvm install $NODE_VERSION
+    nvm alias default $NODE_VERSION
   fi
 elif (( $USE_NAVE )); then
   nave usemain $NODE_VERSION
