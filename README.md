@@ -38,12 +38,12 @@ It also works as a first-time installer.
 
 Clone this repo somewhere. If you have SSH setup with GitHub, use this format:
 ```
-git clone git@github.com:brock/node-reinstall.git
+git clone git@github.com/YingLiu4203/node-reinstall.git
 ```
 
 Otherwise, clone this repo using HTTPS:
 ```
-git clone https://github.com/brock/node-reinstall.git
+git clone https://github.com/YingLiu4203/node-reinstall.git
 ```
 
 ### Run the Re-Installer
